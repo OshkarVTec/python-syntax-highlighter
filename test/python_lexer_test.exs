@@ -36,4 +36,23 @@ defmodule PythonLexerTest do
     assert {:ok, [{:integer, _,_}],_} = :lexer.string('0B10011')
   end
 
+  test "float1" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('0.123')
+  end
+  test "float2" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('10.')
+  end
+  test "float3" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('1e23')
+  end
+  test "float4" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('3.14e-10')
+  end
+  test "float5" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('3.14_15')
+  end
+  test "float6" do
+    assert {:ok, [{:float, _,_}],_} = :lexer.string('.10')
+  end
+
 end

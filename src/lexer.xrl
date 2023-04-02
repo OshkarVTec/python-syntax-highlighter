@@ -5,6 +5,9 @@ Rules.
 0[oO](_?[0-7])+   : {token, {integer, TokenLine, TokenChars}}. %Oct integer
 0[bB](_?[0,1])+   : {token, {integer, TokenLine, TokenChars}}. %Bin integer
 
+([0-9]((_?[0-9])+)?)?\.((_?[0-9])+((E|e)(\+|-)?(_?[0-9])+)?)? : {token, {float, TokenLine, TokenChars}}. %Float
+[0-9]((_?[0-9])+)?((E|e)(\+|-)?(_?[0-9])+) : {token, {float, TokenLine, TokenChars}}. %Float
+
 \s             : skip_token.
 Erlang code.
 
