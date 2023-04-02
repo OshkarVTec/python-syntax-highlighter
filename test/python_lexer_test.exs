@@ -17,5 +17,14 @@ defmodule PythonLexerTest do
   test "hexInteger3" do
     assert {:ok, [{:integer, _,_}],_} = :lexer.string('0X4AB')
   end
+  test "octInteger1" do
+    assert {:ok, [{:integer, _,_}],_} = :lexer.string('0o4')
+  end
+  test "octInteger2" do
+    assert {:ok, [{:integer, _,_}],_} = :lexer.string('0o234')
+  end
+  test "octInteger3" do
+    assert {:ok, [{:integer, _,_}],_} = :lexer.string('0o23_4')
+  end
 
 end
