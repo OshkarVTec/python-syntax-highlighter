@@ -78,4 +78,19 @@ defmodule PythonLexerTest do
   test "keyword4" do
     assert {:ok, [{:keyword, _,_}],_} = :lexer.string('if')
   end
+  test "operator1" do
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('%=')
+  end
+  test "operator2" do
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('%')
+  end
+  test "operator3" do
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('+')
+  end
+  test "operator4" do
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('+=')
+  end
+  test "operator5" do
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('@')
+  end
 end
