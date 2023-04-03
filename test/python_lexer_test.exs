@@ -66,5 +66,16 @@ defmodule PythonLexerTest do
   test "identifier4" do
     assert {:ok, [{:identifier, _,_}],_} = :lexer.string('var2')
   end
-
+  test "keyword1" do
+    assert {:ok, [{:keyword, _,_}],_} = :lexer.string('True')
+  end
+  test "keyword2" do
+    assert {:ok, [{:keyword, _,_}],_} = :lexer.string('False')
+  end
+  test "keyword3" do
+    assert {:ok, [{:keyword, _,_}],_} = :lexer.string('lambda')
+  end
+  test "keyword4" do
+    assert {:ok, [{:keyword, _,_}],_} = :lexer.string('if')
+  end
 end
