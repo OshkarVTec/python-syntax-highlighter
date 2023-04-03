@@ -15,6 +15,8 @@ False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else
 
 [_a-zA-Z][_a-zA-Z0-9]* : {token, {identifier, TokenLine, TokenChars}}. %Identifier
 
+(\#.*)                : {token, {comment, TokenLine, TokenChars}}. %Comment
+
 
 \s             : skip_token.
 Erlang code.

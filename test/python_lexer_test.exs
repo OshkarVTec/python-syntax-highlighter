@@ -93,4 +93,10 @@ defmodule PythonLexerTest do
   test "operator5" do
     assert {:ok, [{:operator, _,_}],_} = :lexer.string('@')
   end
+  test "comment1" do
+    assert {:ok, [{:comment, _,_}],_} = :lexer.string('#a')
+  end
+  test "comment2" do
+    assert {:ok, [{:comment, _,_}],_} = :lexer.string('#Hello World!')
+  end
 end
