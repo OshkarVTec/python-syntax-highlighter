@@ -5,23 +5,23 @@ defmodule PythonLexer do
   end
   def html(tokens) do
     tokens = elem(tokens,1)
-    newhtml = Enum.map(tokens, fn{token, _, chars}->
-      chars = HtmlEntities.encode(to_string(chars))  #mix deps.get
+    content = Enum.map(tokens, fn{token, _, str}->
+      str = HtmlEntities.encode(to_string(str))  #mix deps.get
       case token do
-        :identifier -> "<span class=\"identifier\">#{chars}</span>"
-        :keyword -> "<span class=\"keyword\">#{chars}</span>"
-        :delimiter -> "<span class=\"delimiter\">#{chars}</span>"
-        :operator -> "<span class=\"operator\">#{chars}</span>"
-        :integer -> "<span class=\"integer\">#{chars}</span>"
-        :float -> "<span class=\"float\">#{chars}</span>"
-        :string -> "<span class=\"string\">#{chars}</span>"
-        :space -> "<span class=\"space\">#{chars}</span>"
+        :identifier -> "<span class=\"identifier\">#{str}</span>"
+        :keyword -> "<span class=\"keyword\">#{str}</span>"
+        :delimiter -> "<span class=\"delimiter\">#{str}</span>"
+        :operator -> "<span class=\"operator\">#{str}</span>"
+        :integer -> "<span class=\"integer\">#{str}</span>"
+        :float -> "<span class=\"float\">#{str}</span>"
+        :string -> "<span class=\"string\">#{str}</span>"
+        :space -> "<span class=\"space\">#{str}</span>"
         :endline -> "<br>"
-        :comment -> "<span class=\"comment\">#{chars}</span>"
+        :comment -> "<span class=\"comment\">#{str}</span>"
       end
     end)
-    newhtml = Enum.join(newhtml)
-    "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"style.css\"></head><body><pre>#{newhtml}</pre></body></html>"
+    content = Enum.join(content)
+    "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"style.css\"></head><body><pre>#{content}</pre></body></html>"
   end
   def convert(file) do
     {:ok, output} = File.open("output.html", [:write])
