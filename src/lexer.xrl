@@ -22,5 +22,7 @@ False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else
 
 \s             : {token, {space, TokenLine, TokenChars}}.
 
+\n|\r             : {token, {endline, TokenLine, TokenChars}}.
+
 Erlang code.
 
