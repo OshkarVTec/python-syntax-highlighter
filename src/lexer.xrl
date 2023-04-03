@@ -10,14 +10,16 @@ Rules.
 
 False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield : {token, {keyword, TokenLine, TokenChars}}. %Keywords
 
-[\*\*|\+=|\-=|\*=|/=|'%'|\*\*=|<<=|>>=|==|!=|>=|<=|\+|\-|\*|\/|\'%='|\&|\||\^|\~|<<|>>|=|@]+ : {token, {operator, TokenLine, TokenChars}}. %Operator
+\+|\-|\*|\*\*|/|//|@|<<|>>|&|\||\^|~|:=|<|>|<=|>=|==|!=|% : {token, {operator, TokenLine, TokenChars}}. %Operator
 
 
 [_a-zA-Z][_a-zA-Z0-9]* : {token, {identifier, TokenLine, TokenChars}}. %Identifier
 
 (\#.*)                : {token, {comment, TokenLine, TokenChars}}. %Comment
 
+\"[^"]*\"             : {token, {string, TokenLine, TokenChars}}. % String
 
-\s             : skip_token.
+\s             : {token, {space, TokenLine, TokenChars}}.
+
 Erlang code.
 

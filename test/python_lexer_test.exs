@@ -79,7 +79,7 @@ defmodule PythonLexerTest do
     assert {:ok, [{:keyword, _,_}],_} = :lexer.string('if')
   end
   test "operator1" do
-    assert {:ok, [{:operator, _,_}],_} = :lexer.string('%=')
+    assert {:ok, [{:operator, _,_}],_} = :lexer.string('>>')
   end
   test "operator2" do
     assert {:ok, [{:operator, _,_}],_} = :lexer.string('%')
@@ -87,9 +87,7 @@ defmodule PythonLexerTest do
   test "operator3" do
     assert {:ok, [{:operator, _,_}],_} = :lexer.string('+')
   end
-  test "operator4" do
-    assert {:ok, [{:operator, _,_}],_} = :lexer.string('+=')
-  end
+
   test "operator5" do
     assert {:ok, [{:operator, _,_}],_} = :lexer.string('@')
   end
@@ -98,5 +96,11 @@ defmodule PythonLexerTest do
   end
   test "comment2" do
     assert {:ok, [{:comment, _,_}],_} = :lexer.string('#Hello World!')
+  end
+  test "string1" do
+    assert {:ok, [{:string, _,_}],_} = :lexer.string('"Hello World!"')
+  end
+  test "string2" do
+    assert {:ok, [{:string, _,_}],_} = :lexer.string('""')
   end
 end
