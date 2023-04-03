@@ -113,4 +113,8 @@ defmodule PythonLexerTest do
     assert {:ok, [{:delimiter, _,_}],_} = :lexer.string('%=')
   end
 
+  test "converter" do
+    PythonLexer.convert("test.py")
+  end
+
 end
