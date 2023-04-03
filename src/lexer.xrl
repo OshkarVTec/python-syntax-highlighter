@@ -8,6 +8,8 @@ Rules.
 ([0-9]((_?[0-9])+)?)?\.((_?[0-9])+((E|e)(\+|-)?(_?[0-9])+)?)? : {token, {float, TokenLine, TokenChars}}. %Float
 [0-9]((_?[0-9])+)?((E|e)(\+|-)?(_?[0-9])+) : {token, {float, TokenLine, TokenChars}}. %Float
 
+[_a-zA-Z][_a-zA-Z0-9]* : {token, {identifier, TokenLine, TokenChars}}. %Identifier
+
 \s             : skip_token.
 Erlang code.
 

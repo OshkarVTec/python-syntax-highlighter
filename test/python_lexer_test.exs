@@ -54,5 +54,17 @@ defmodule PythonLexerTest do
   test "float6" do
     assert {:ok, [{:float, _,_}],_} = :lexer.string('.10')
   end
+  test "identifier1" do
+    assert {:ok, [{:identifier, _,_}],_} = :lexer.string('var')
+  end
+  test "identifier2" do
+    assert {:ok, [{:identifier, _,_}],_} = :lexer.string('Var')
+  end
+  test "identifier3" do
+    assert {:ok, [{:identifier, _,_}],_} = :lexer.string('_var_')
+  end
+  test "identifier4" do
+    assert {:ok, [{:identifier, _,_}],_} = :lexer.string('var2')
+  end
 
 end
