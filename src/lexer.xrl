@@ -12,6 +12,7 @@ False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else
 
 \+|\-|\*|\*\*|/|//|@|<<|>>|&|\||\^|~|:=|<|>|<=|>=|==|!=|% : {token, {operator, TokenLine, TokenChars}}. %Operator
 
+\(|\)|\[|\]|\{|\}|\,|\:|\.|;|@|=|->|\+=|\-=|\*=|/=|//=|@=|&=|\|=|\^=|<<=|>>=|\*\*=|%=|@=  : {token, {delimiter, TokenLine, TokenChars}}. %Delimiter
 
 [_a-zA-Z][_a-zA-Z0-9]* : {token, {identifier, TokenLine, TokenChars}}. %Identifier
 

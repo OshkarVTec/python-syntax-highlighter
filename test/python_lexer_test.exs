@@ -103,4 +103,14 @@ defmodule PythonLexerTest do
   test "string2" do
     assert {:ok, [{:string, _,_}],_} = :lexer.string('""')
   end
+  test "delimiter1" do
+    assert {:ok, [{:delimiter, _,_}],_} = :lexer.string('(')
+  end
+  test "delimiter2" do
+    assert {:ok, [{:delimiter, _,_}],_} = :lexer.string('{')
+  end
+  test "delimiter3" do
+    assert {:ok, [{:delimiter, _,_}],_} = :lexer.string('%=')
+  end
+
 end
