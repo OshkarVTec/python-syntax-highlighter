@@ -1,0 +1,34 @@
+body {
+   font-size: xx-large;
+}
+.identifier {
+   color: #407ee7;
+}
+
+.keyword {
+   color: #7b9726;
+}
+
+.delimiter {
+   color: #6666ea;
+}
+
+.operator {
+   color: #a8a19f;
+}
+
+.integer {
+   color:  #df5320;
+}
+
+.float {
+   color: #df5320;
+}
+
+.string {
+   color: #3d97b8;
+}
+
+.comment {
+   color:  #9c9491;
+}
