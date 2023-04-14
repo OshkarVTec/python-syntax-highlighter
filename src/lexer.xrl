@@ -18,7 +18,7 @@ False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else
 
 (\#.*)                : {token, {comment, TokenLine, TokenChars}}. %Comment
 
-\"[^"]*\"             : {token, {string, TokenLine, TokenChars}}. % String
+(\"|\').*(\"|\')             : {token, {string, TokenLine, TokenChars}}. % String
 
 \s             : {token, {space, TokenLine, TokenChars}}.
 
