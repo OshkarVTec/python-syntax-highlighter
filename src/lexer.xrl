@@ -5,8 +5,8 @@ Rules.
 0[oO](_?[0-7])+   : {token, {integer, TokenLine, TokenChars}}. %Oct integer
 0[bB](_?[0,1])+   : {token, {integer, TokenLine, TokenChars}}. %Bin integer
 
-([0-9]((_?[0-9])+)?)?\.((_?[0-9])+((E|e)(\+|-)?(_?[0-9])+)?)? : {token, {float, TokenLine, TokenChars}}. %Float
-[0-9]((_?[0-9])+)?((E|e)(\+|-)?(_?[0-9])+) : {token, {float, TokenLine, TokenChars}}. %Float
+([0-9](_?[0-9])*)?\.((_?[0-9])+((E|e)(\+|-)?(_?[0-9])+)?)? : {token, {float, TokenLine, TokenChars}}. %Float
+[0-9](_?[0-9])*((E|e)(\+|-)?(_?[0-9])+) : {token, {float, TokenLine, TokenChars}}. %Float
 
 False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield : {token, {keyword, TokenLine, TokenChars}}. %Keywords
 

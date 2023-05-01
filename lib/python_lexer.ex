@@ -27,7 +27,6 @@ defmodule PythonLexer do
     {:ok, output} = File.open("output.html", [:write])
     text = file |> getTokens |> html
     IO.binwrite(output, text)
-    File.close("output.html")
-    :ok
+    File.close(output)
   end
 end
